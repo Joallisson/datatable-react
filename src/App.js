@@ -12,12 +12,16 @@ const App = () => {
         accessor: 'name',
       },
       {
-        Header: 'Username',
-        accessor: 'username',
+        Header: 'Phone',
+        accessor: 'phone',
       },
       {
         Header: 'Email',
         accessor: 'email',
+      },
+      {
+        Header: 'Age',
+        accessor: 'age',
       },
     ],
     []
@@ -25,8 +29,6 @@ const App = () => {
 
   const [data, setData] = useState(null)
   const [skipPageReset, setSkipPageReset] = React.useState(false)
-
-  
 
   const updateMyData = (rowIndex, columnId, value) => {
 
@@ -44,21 +46,17 @@ const App = () => {
     )
   }
 
+
+
   useEffect(() => {
+    
     async function getDados(){
-      await base_api.get('/').then((response) => {
-        response.data.map((value) => {
-          delete value.address
-          delete value.company
-          delete value.id
-          delete value.phone
-          delete value.website
-        })
-  
+      await base_api.get('/users').then((response) => {
+        console.log(response);
         setData(response.data)
       })
     }
-  
+
     getDados()
   }, [])
 
