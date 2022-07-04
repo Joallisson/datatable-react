@@ -226,14 +226,11 @@ const EnhancedTable = ({
                 {row.cells.map(cell => {
                   return (
                     <TableCell {...cell.getCellProps()}>
-
-                    
+ 
                       {
-                        cell.value === 'joallisson' && <h1>Olá</h1>
+                        cell.column.id === 'acoes' && <button>Editar</button>
                       }
                       
-
-
                       {cell.render('Cell')}
                     </TableCell>
                   )

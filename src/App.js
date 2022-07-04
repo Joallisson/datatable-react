@@ -23,6 +23,10 @@ const App = () => {
         Header: 'Age',
         accessor: 'age',
       },
+      {
+        Header: 'Acões',
+        accessor: 'acoes',
+      },
     ],
     []
   )
@@ -52,7 +56,6 @@ const App = () => {
     
     async function getDados(){
       await base_api.get('/users').then((response) => {
-        console.log(response);
         setData(response.data)
       })
     }

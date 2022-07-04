@@ -23,7 +23,7 @@ const initialUser = {
   subRows: undefined,
 }
 
-const AddUserDialog = props => {
+const AddUserDialog = props => { //<<<<<<<<<<<<<<<< método principal que recebe as props
   const [user, setUser] = useState(initialUser)
   const { addUserHandler } = props
   const [open, setOpen] = React.useState(false)
@@ -80,8 +80,8 @@ const AddUserDialog = props => {
             label="First Name"
             type="text"
             fullWidth
-            value={user.firstName}
-            onChange={handleChange('firstName')}
+            value={user.name}
+            onChange={handleChange('name')}
           />
           <TextField
             margin="dense"
