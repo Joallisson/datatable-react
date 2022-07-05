@@ -14,13 +14,11 @@ import TextField from '@material-ui/core/TextField'
 import Tooltip from '@material-ui/core/Tooltip'
 
 const initialUser = {
-  firstName: '',
-  lastName: '',
+  name: '',
+  phone: '',
   age: 0,
-  visits: 0,
-  status: 'single',
-  progress: 0,
-  subRows: undefined,
+  email: '',
+  password: ''
 }
 
 const AddUserDialog = props => { //<<<<<<<<<<<<<<<< método principal que recebe as props
@@ -77,7 +75,7 @@ const AddUserDialog = props => { //<<<<<<<<<<<<<<<< método principal que recebe
           <TextField
             autoFocus
             margin="dense"
-            label="First Name"
+            label="Name"
             type="text"
             fullWidth
             value={user.name}
@@ -85,11 +83,11 @@ const AddUserDialog = props => { //<<<<<<<<<<<<<<<< método principal que recebe
           />
           <TextField
             margin="dense"
-            label="Last Name"
+            label="Phone"
             type="text"
             fullWidth
-            value={user.lastName}
-            onChange={handleChange('lastName')}
+            value={user.phone}
+            onChange={handleChange('phone')}
           />
           <TextField
             margin="dense"
@@ -101,27 +99,19 @@ const AddUserDialog = props => { //<<<<<<<<<<<<<<<< método principal que recebe
           />
           <TextField
             margin="dense"
-            label="Visits"
-            type="number"
-            fullWidth
-            value={user.visits}
-            onChange={handleChange('visits')}
-          />
-          <TextField
-            margin="dense"
-            label="Status"
+            label="Email"
             type="text"
             fullWidth
-            value={user.status}
-            onChange={handleChange('status')}
+            value={user.email}
+            onChange={handleChange('email')}
           />
           <TextField
             margin="dense"
-            label="Profile Progress"
-            type="number"
+            label="Password"
+            type="password"
             fullWidth
-            value={user.progress}
-            onChange={handleChange('progress')}
+            value={user.password}
+            onChange={handleChange('password')}
           />
         </DialogContent>
         <DialogActions>

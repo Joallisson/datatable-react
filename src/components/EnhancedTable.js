@@ -1,4 +1,5 @@
 import React from 'react'
+import { base_api } from '../services/api'
 
 import Checkbox from '@material-ui/core/Checkbox'
 import MaUTable from '@material-ui/core/Table'
@@ -179,8 +180,21 @@ const EnhancedTable = ({
     setData(newData)
   }
 
+  async function addData(user) {
+    await base_api.post('users/', {addData})
+      .then((response) => {
+        console.log(response.JSON())
+      })
+      .catch((error) => {
+        console.log(error.JSON())
+      })
+  }
+
   const addUserHandler = user => {
     const newData = data.concat([user])
+    const addUser = JSON.stringify(user);
+    addData(addUser);
+    //console.log(JSON.stringify(user))
     setData(newData)
   }
 
