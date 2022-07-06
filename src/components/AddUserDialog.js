@@ -100,7 +100,7 @@ const AddUserDialog = props => { //<<<<<<<<<<<<<<<< método principal que recebe
           <TextField
             margin="dense"
             label="Email"
-            type="text"
+            type="string"
             fullWidth
             value={user.email}
             onChange={handleChange('email')}

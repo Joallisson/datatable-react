@@ -180,21 +180,15 @@ const EnhancedTable = ({
     setData(newData)
   }
 
-  async function addData(user) {
-    await base_api.post('users/', {addData})
-      .then((response) => {
-        console.log(response.JSON())
-      })
-      .catch((error) => {
-        console.log(error.JSON())
-      })
+  async function addUser(user) {
+    await base_api.post('users', user);
   }
 
   const addUserHandler = user => {
+    addUser(user);
+
+
     const newData = data.concat([user])
-    const addUser = JSON.stringify(user);
-    addData(addUser);
-    //console.log(JSON.stringify(user))
     setData(newData)
   }
 
